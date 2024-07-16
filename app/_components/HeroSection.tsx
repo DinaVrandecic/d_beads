@@ -6,11 +6,15 @@ export default function HeroSection() {
   return (
     <section className="container flex flex-col lg:flex-row justify-between items-center gap-10 w-screen relative mb-[100px] lg:mb-[200px] lg:px-10">
       <div className="flex-1 w-full  flex flex-col gap-[5px] order-2 md:m-[50px] px-[20px] mt-[20px] lg:px-[0px] lg:order-1">
-        <h1 className="font-serif text-6xl font-extrabold text-blue1 ">
+        <h1 className="font-serif text-5xl md:text-6xl font-extrabold text-blue1 ">
           Your Ultimate Jewelry Destination
         </h1>
         <p className="font-serif text-xl whitespace-break-spaces text-brown1 mt-7">
-        Discover the essence of timeless elegance shimmering through every piece at Elina. From delicate necklaces to intricate bracelets, we invite you to join us on an exciting and sparkling journey. At Elina, we offer sophistication and affordability, ensuring that every piece reflects your unique style.
+          Welcome to dBeads, your ultimate destination for exquisite handmade
+          jewelry. Our collection showcases a fusion of creativity and quality
+          craftsmanship, ensuring each piece is vibrant and eye-catching.
+          Explore our diverse range of accessories and unleash your unique style
+          with dBeads today!
         </p>
         <div className="flex items-center justify-center mt-[40px]">
           <a href="/about">

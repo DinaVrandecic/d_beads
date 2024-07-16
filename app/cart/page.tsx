@@ -24,10 +24,10 @@ function ShoppingCartPage() {
             <div className="absolute w-full h-full -top-[30px] left-[30px] -z-10 bg-peach1"></div>
           </div>
           <h3 className="text-dark_blue font-serif font-bold">
-            Your Jewelry Box is Empty :({" "}
+            Your Jewelry Box is Empty :(
           </h3>
           <h4 className="text-dark_blue font-serif font-bold mt-3">
-            Add something!{" "}
+            Add something!
           </h4>
           <Link legacyBehavior href="/shop/all">
             <a className="bg-dark_blue font-serif hover:bg-peach1 text-peach1 hover:text-dark_blue py-2 px-4 mt-3 mb-3 text-serif">
@@ -37,7 +37,7 @@ function ShoppingCartPage() {
         </div>
       )}
 
-      {cartArray.length && (
+      {cartArray.length !== 0 && (
         <div className="flex flex-col justify-center items-center w-full">
           {cartArray.map((cartItem, index) => {
             return (
@@ -69,7 +69,7 @@ function ShoppingCartPage() {
         </div>
       )}
 
-      <div className="flex flex-col align-center justify-start mt-[50px] mx-auto">
+      <div className="flex flex-col align-center mt-[50px] mx-auto max-w-3xl">
         {/* Payment Method Section */}
         <div className="px-[10px]">
           <h2 className="text-2xl font-bold font-serif text-dark_blue mb-3">
@@ -79,13 +79,15 @@ function ShoppingCartPage() {
             We accept the following payment methods for your jewelry purchases:
           </p>
           <ul className="list-disc list-inside text-brown1 font-bold font-serif">
-            <li>Credit Cards (Visa, MasterCard, American Express)</li>
-            <li>PayPal</li>
+            <li>Revolut</li>
+            <li>KEKS Pay</li>
             <li>Bank Transfer</li>
+            <li>Cash</li>
           </ul>
           <p className="text-brown1 mt-3 font-serif">
-            Rest assured that your payment information is encrypted and
-            protected during the entire transaction process.
+            Please note that you have the flexibility to pay for your order upon
+            receiving it, ensuring your satisfaction before completing the
+            transaction.
           </p>
         </div>
 
@@ -94,18 +96,13 @@ function ShoppingCartPage() {
           <h2 className="text-2xl font-bold font-serif text-dark_blue mb-3">
             Delivery Information
           </h2>
-          <p className="text-brown1 font-serif mb-3 ">
-            We partnered with the best delivery companies so you could enjoy a
-            fast and reliable delivery of your goods:
-          </p>
-          <ul className="list-disc list-inside text-brown1 font-bold font-serif">
-            <li>Standard Shipping: 5-7 business days</li>
-            <li>Express Shipping: 2-3 business days</li>
-            <li>International Shipping available</li>
-          </ul>
           <p className="text-brown1 mt-3 font-serif">
-            Track your order and receive updates on your delivery status for a
-            worry-free shopping experience.
+            For deliveries within Split and the surrounding areas, I personally
+            handle all shipments of the jewelry. Alternatively, we can arrange a
+            convenient meetup location for you to receive your order. Orders
+            will be completed within few days, with delivery times varying
+            depending on the size of the order. Your satisfaction and
+            convenience are my top priorities!
           </p>
         </div>
       </div>
