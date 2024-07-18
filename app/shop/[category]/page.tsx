@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useEffect } from "react";
 import Card from "../Card";
 import { fetchGraphQL } from "@/lib/contentfulFetch";
@@ -32,7 +32,7 @@ function Page({ params }: pageProps) {
   useEffect(() => {
     let query = "";
 
-    if (params.category === 'all') {
+    if (params.category === "all") {
       query = `
         query {
           productCollection {
@@ -50,7 +50,9 @@ function Page({ params }: pageProps) {
           }
         }
       `;
-    } else if (['ring', 'earring', 'bracelet', 'necklace'].includes(params.category)) {
+    } else if (
+      ["ring", "earring", "bracelet", "necklace"].includes(params.category)
+    ) {
       query = `
         query {
           productCollection (where: {name_contains: "${params.category}"}) {
@@ -68,8 +70,7 @@ function Page({ params }: pageProps) {
           }
         }
       `;
-    } 
-    else {
+    } else {
       // Redirect to not-found page
       setRedirectToNotFound(true);
       return;
@@ -96,20 +97,20 @@ function Page({ params }: pageProps) {
 
   if (redirectToNotFound) {
     // Redirect to not-found page
-    window.location.href = '/not-found';
-    return null; // You can also return a loading spinner or any other component
+    window.location.href = "/not-found";
+    return null;
   }
 
   return (
-    <div >
+    <div>
       <h1 className="text-center my-[30px] text-4xl md:text-5xl font-bold font-serif text-dark_blue">
-        {params.category === "all" ? (
-          // Render if params.category is "all"
-          params.category[0].toUpperCase() + params.category.slice(1) + " products"
-        ) : (
-          // Render if params.category is not "all"
-          params.category[0].toUpperCase() + params.category.slice(1) + "s"
-        )}
+        {params.category === "all"
+          ? // Render if params.category is "all"
+            params.category[0].toUpperCase() +
+            params.category.slice(1) +
+            " products"
+          : // Render if params.category is not "all"
+            params.category[0].toUpperCase() + params.category.slice(1) + "s"}
       </h1>
       <div className="flex justify-center">
         <section className="grid md:grid-cols-2 lg:grid-cols-3">

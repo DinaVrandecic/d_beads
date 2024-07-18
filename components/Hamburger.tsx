@@ -1,80 +1,76 @@
-"use client"
+"use client";
 import { FC } from "react";
 import Link from "next/link";
-import { usePathname } from 'next/navigation'
-import {cn} from "../lib/utils";
+import { usePathname } from "next/navigation";
+import { cn } from "../lib/utils";
 import Image from "next/image";
-import logoImage  from "../public/pictures/logo.png";
+import logoImage from "../public/pictures/logo.png";
 import React, { useState } from "react";
-import DropdownPhone from "./DropdownPhone"
-
+import DropdownPhone from "./DropdownPhone";
 
 interface HamburgerProps {
-  // Record of string keys and string values where each value is a path starting with a slash
   pages: Record<string, `/${string}`>;
 }
 const baseClass =
-"uppercase whitespace-nowrap font-serif text-base px-5 py-3 rounded-sm text-dark_blue  hover:bg-dark_blue hover:text-peach1";
+  "uppercase whitespace-nowrap font-serif text-base px-5 py-3 rounded-sm text-dark_blue hover:bg-dark_blue hover:text-peach1";
 
 const Hamburger: FC<HamburgerProps> = ({ pages }) => {
   const pathName = usePathname();
-
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-const toggleMenu = () => {
-  setIsMenuOpen(!isMenuOpen);
-};
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-  return ( 
-    <div className=" hover:cursor-pointer md:hidden lg:hidden">
-      <div className="flex bg-nf_blue ">
+  return (
+    <div className="hover:cursor-pointer md:hidden lg:hidden sticky z-10 top-0">
+      <div className="flex py-[10px] bg-nf_blue">
         <div
           onClick={toggleMenu}
-          className="p-5 bg-nf_blue  flex flex-col gap-1 justify-around"
+          className="p-5 w-10 h-10 bg-nf_blue flex flex-col justify-around"
         >
-          <div className="transition-all origin-center w-6 h-1 bg-brown1"></div>
-          <div className="transition-all origin-center w-6 h-1 bg-brown1"></div>
-          <div className="transition-all origin-center w-6 h-1 bg-brown1"></div>
+          <div className="w-5 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <span
+              aria-hidden="true"
+              className={`block absolute transform transition duration-500 ease-in-out w-6 h-1 bg-brown1 rounded-sm ${
+                isMenuOpen ? "rotate-45" : "-translate-y-1.5"
+              }`}
+            ></span>
+            <span
+              aria-hidden="true"
+              className={`block absolute transform transition duration-500 ease-in-out w-6 h-1 bg-brown1 rounded-sm ${
+                isMenuOpen ? "opacity-0" : ""
+              }`}
+            ></span>
+            <span
+              aria-hidden="true"
+              className={`block absolute transform transition duration-500 ease-in-out w-6 h-1 bg-brown1 rounded-sm ${
+                isMenuOpen ? "-rotate-45" : "translate-y-1.5"
+              }`}
+            ></span>
+          </div>
         </div>
-        <div className="mx-[10px]  mt-[20px]">
-        <Image
-          src={logoImage}
-          alt="Hero Image"
-          width={100} 
-          height={100} 
-        />
+        <div className="m-[10px] flex justify-center items-center">
+          <Image src={logoImage} alt="Hero Image" width={100} height={100} />
         </div>
       </div>
 
-
       <div
-        className={` ${
-          isMenuOpen ? "absolute" : "hidden"
-        }  w-full top-10 left-0 bg-nf_blue text-dark_blue h-30 z-10 mt-[20px]`}
+        className={`fixed w-full top-[50px] left-0 bg-nf_blue text-dark_blue h-[calc(100vh-50px)] z-10 transform transition-transform duration-700 delay-150 ${
+          isMenuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
       >
-
-        <ul className="flex  flex-col justify-center items-center my-[20px] gap-[30px]">
+        <ul className="flex flex-col justify-center items-center my-[20px] gap-[30px]">
           {Object.entries(pages).map(([name, path]) => (
             <li key={name}>
-              {name === 'shop' ? (
+              {name === "shop" ? (
                 <>
-                  {/* <Link href={path}>
-                    <span
-                      className={cn(baseClass, {
-                        "bg-dark_blue text-peach1 pointer-events-none":
-                          path === pathName,
-                      })}
-                    >
-                      {name}
-                    </span>
-                  </Link> */}
-                  <DropdownPhone link={path}/>
+                  <DropdownPhone link={path} toggleMenu={toggleMenu} />
                 </>
               ) : (
-                <Link href={path}>
+                <Link href={path} onClick={toggleMenu}>
                   <span
                     className={cn(baseClass, {
-                      "bg-dark_blue text-peach1 ":
-                        path === pathName,
+                      "bg-dark_blue text-peach1": path === pathName,
                     })}
                   >
                     {name}
@@ -82,72 +78,10 @@ const toggleMenu = () => {
                 </Link>
               )}
             </li>
-  ))}
+          ))}
         </ul>
-        </div>
       </div>
-
+    </div>
   );
 };
 export default Hamburger;
-
-
-
-
-
-// {Object.entries(pages).map(([name, path]) => (
-//   <li key={name}>
-//     <Link href={path}>
-//       <span
-//         className={cn(baseClass, {
-//           "bg-dark_blue text-peach1 pointer-events-none":
-//             path === pathName,
-//         })}
-//       >
-//         {name}
-//       </span>
-//     </Link>
-//   </li>
-// ))}
-
-
-
-
-
-// "use client";
-// import React, { useState } from "react";
-// import Link from "next/link";
-
-// function Hamburger() {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const toggleMenu = () => {
-//     setIsMenuOpen(!isMenuOpen);
-//   };
-
-//   return (
-//     <div className=" hover:cursor-pointer">
-//       <div
-//         onClick={toggleMenu}
-//         className="m-5 md:hidden lg:hidden flex flex-col gap-1 justify-around"
-//       >
-//         <div className="transition-all origin-center w-6 h-1 bg-brown1"></div>
-//         <div className="transition-all origin-center w-6 h-1 bg-brown1"></div>
-//         <div className="transition-all origin-center w-6 h-1 bg-brown1"></div>
-//       </div>
-//       <div
-//         className={` ${
-//           isMenuOpen ? "absolute" : "hidden"
-//         }  w-full top-10 left-0 bg-peach1 text-brown1 h-30 z-10`}
-//       >
-//         <div className="flex flex-col justify-center items-center my-[20px]">
-//           <Link href="/products">Products</Link>
-//           <Link href="/cart">Cart</Link>
-//           <Link href="/about">About Us</Link>
-//           <Link href="/login">Sign In</Link>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default Hamburger;
