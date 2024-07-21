@@ -32,8 +32,6 @@ function Page({ params }: pageProps) {
   const [product, setProduct] = useState<Product>({} as Product);
   const productName = params.product.replace(/-/g, " ");
 
-  const { cartArray, addToCart } = useContext();
-
   useEffect(() => {
     const query = `
     query {
@@ -67,29 +65,20 @@ function Page({ params }: pageProps) {
     fetchData();
   }, [params.category]);
 
-  const handleAddToCart = () => {
-    addToCart(product);
-  };
-
   if (redirectToNotFound) {
-    // Redirect to not-found page
     window.location.href = "/not-found";
-    return null; // You can also return a loading spinner or any other component
+    return null;
   }
   console.log(product);
 
   return (
     <div className="flex justify-center items-center flex-col">
-      <h1 className="text-2xl md:text-4xl font-bold text-center text-dark_blue font-serif m-[30px] ">
-        {product.name}
-      </h1>
       {product.picture && product.picture.url && (
         <Product
           imageUrl={product.picture.url}
           category={product.category}
           title={product.name}
           price={product.price}
-          onAddToCart={handleAddToCart}
         />
       )}
     </div>

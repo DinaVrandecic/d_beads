@@ -2,16 +2,10 @@
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface Product {
-  category: string;
   name: string;
   price: string;
-  picture: {
-    id: number;
-    title: string;
-    description: string;
-    contentType: string;
-    url: string;
-  };
+  quantity: number;
+  picture: string;
 }
 interface contextProps {
   //   cartArray: ItemCardProps[];
@@ -38,7 +32,15 @@ const MyProvider = ({ children }: MyProviderProps) => {
     const existingItem = cartArray.find(
       (cartItem) => cartItem.name === item.name
     );
-    if (!existingItem) {
+    if (existingItem) {
+      setCart(
+        cartArray.map((cartItem) =>
+          cartItem.name === item.name
+            ? { ...cartItem, quantity: cartItem.quantity + item.quantity }
+            : cartItem
+        )
+      );
+    } else {
       setCart([...cartArray, item]);
     }
   };

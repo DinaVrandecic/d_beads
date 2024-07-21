@@ -47,7 +47,7 @@ function ShoppingCartPage() {
               >
                 <img
                   className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] p-[10px]"
-                  src={cartItem.picture.url}
+                  src={cartItem.picture}
                 ></img>
                 <div className="flex-1 ml-auto flex justify-end items-center gap-2 md:mr-5">
                   <div className="text-blue1 font-bold font-serif text-base md:text-xl ">
@@ -55,6 +55,9 @@ function ShoppingCartPage() {
                   </div>
                   <div className="text-brown1 font-bold font-serif text-base md:text-xl m-[10px]">
                     {cartItem.price}
+                  </div>
+                  <div className="text-brown1 font-bold font-serif text-base md:text-xl m-[10px]">
+                    {cartItem.quantity}
                   </div>
                 </div>
                 <div
