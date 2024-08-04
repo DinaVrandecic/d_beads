@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { useContext } from "@/app/context/context";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 interface ProductProps {
   imageUrl: string;
@@ -25,6 +27,16 @@ const Product: React.FC<ProductProps> = ({
       price,
       quantity: counter,
       picture: imageUrl,
+    });
+    toast.success(`${counter} ${title} added to cart!`, {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
     });
   };
 
@@ -64,12 +76,27 @@ const Product: React.FC<ProductProps> = ({
             +
           </button>
         </div>
-        <button
-          className="font-serif text-dark_blue bg-peach1 hover:text-peach1 hover:bg-dark_blue p-[7px] mt-[10px] rounded-sm"
-          onClick={handleAddToCart}
-        >
-          Add to cart
-        </button>
+        <div>
+          <button
+            className="font-serif text-dark_blue bg-peach1 hover:text-peach1 hover:bg-dark_blue p-[7px] mt-[10px] rounded-sm"
+            onClick={handleAddToCart}
+          >
+            Add to cart
+          </button>
+          <ToastContainer
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="colored"
+            toastStyle={{ backgroundColor: "#2A4F6E" }}
+          />
+        </div>
       </div>
     </div>
   );

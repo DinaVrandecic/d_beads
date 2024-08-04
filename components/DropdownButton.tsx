@@ -30,6 +30,7 @@ const Dropdown: React.FC<DropdownProps> = ({ link }) => {
         })}
         onClick={() => setShowDropdown(!showDropdown)}
         onMouseEnter={() => setShowDropdown(true)}
+        onMouseLeave={() => setShowDropdown(false)}
       >
         SHOP
       </a>
