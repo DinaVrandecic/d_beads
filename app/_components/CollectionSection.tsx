@@ -13,7 +13,10 @@ const CollectionSection = () => (
       <Collection heroImage={heroImage3} button_text="necklace" />
     </div>
     <div className="flex justify-center mr-[30px]">
-      <Link href={"/shop/" + "all"} className=" font-serif text-peach1 bg-dark_blue hover:text-dark_blue hover:bg-peach1 p-[15px] m-[10px] rounded-sm">
+      <Link
+        href={"/shop/" + "all"}
+        className=" font-serif text-peach1 bg-dark_blue hover:text-dark_blue hover:bg-peach1 p-[15px] mt-[10px] ml-[30px] rounded-sm"
+      >
         SHOP ALL
       </Link>
     </div>

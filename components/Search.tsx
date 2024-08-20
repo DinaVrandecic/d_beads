@@ -25,9 +25,6 @@
 //     );
 // }
 
-
-
-
 "use client";
 import React, { useRef, useState, useEffect } from "react";
 import { fetchGraphQL } from "@/lib/contentfulFetch";
@@ -39,83 +36,99 @@ const access_token = "N45HXFp-MbSa4GvLTotphSM4O3Ey5jCx9Qvb8-9p5PE";
 interface Product {
   name: string;
   category: string;
-
 }
 
 function Search() {
   const inputRef = useRef<HTMLInputElement>(null);
-  const [searchReults, setSearchResults] = useState<Product[]>([]); 
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(e.target.value)
-    const       query = `
+    const query = `
     query {
       productCollection (where: {name_contains: "${e.target.value}"}) {
         items {
           name
-          price
           category
-          picture {
-            title
-            description
-            contentType
-            url
-          }
         }
       }
-    }
-  `;
+    }`;
+
     if (e.target.value !== "") {
       fetchData(query);
+      setDropdownVisible(true);
     } else {
       setSearchResults([]);
+      setDropdownVisible(false);
     }
   };
 
-
   const fetchData = async (query: string) => {
-
     try {
       const response = await fetchGraphQL(query, space_id, access_token);
       const data = await response.json();
       setSearchResults(data.data.productCollection.items);
     } catch (error) {
       console.log("Error fetching Contentful data:", error);
-    } 
+    }
   };
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node) &&
+      inputRef.current &&
+      !inputRef.current.contains(event.target as Node)
+    ) {
+      setDropdownVisible(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
     <div className="flex items-center">
-        <div className="hidden md:flex lg:flex  items-center justify-evenly  shrink-5 relative">
-            <input
-                ref={inputRef}
-                onChange={handleInputChange}
-                type="text"
-                placeholder="Search..."
-                className="block w-[80px] lg:w-full p-[3px] lg:px-4 py-2 text-brown1 bg-page_background focus:ring-peach1 focus:outline-none focus:ring focus:ring-opacity-70 font-serif text-xl"
-            />
-            {searchReults.length > 0 && (
-                <div className="absolute w-full bg-beige_text text-brown1 max-h-64 h-content top-[44px] z-10 rounded-sm overflow-y-auto">
-                {searchReults.map((product, index) => (
-                    <Link
-                    onClick={() => {
-                        if (inputRef.current !== null) {
-                        inputRef.current.value = "";
-                        }
-                        setSearchResults([]);
-                    }}
-                    href={`/shop/${product.category}/${product.name.trim().replaceAll(" ", "-")}`}
-                    key={index}
-                    >
-                    <div className="font-serif text-lg my-1 hover:bg-nf_blue" key={index}>
-                        {product.name}
-                    </div>
-                    </Link>
-                ))}
-            </div>
-            
+      <div className="hidden md:flex lg:flex items-center justify-evenly shrink-5 relative">
+        <input
+          ref={inputRef}
+          onChange={handleInputChange}
+          type="text"
+          placeholder="Search..."
+          className="block w-[80px] lg:w-full p-[3px] lg:px-4 py-2 text-brown1 bg-page_background focus:ring-peach1 focus:outline-none focus:ring focus:ring-opacity-70 font-serif text-xl"
+        />
+        {isDropdownVisible && searchResults.length > 0 && (
+          <div
+            ref={dropdownRef}
+            className="absolute w-full bg-beige_text text-brown1 max-h-64 h-content top-[44px] z-10 rounded-sm overflow-y-auto"
+          >
+            {searchResults.map((product, index) => (
+              <Link
+                onClick={() => {
+                  if (inputRef.current !== null) {
+                    inputRef.current.value = "";
+                  }
+                  setSearchResults([]);
+                  setDropdownVisible(false);
+                }}
+                href={`/shop/${product.category}/${product.name
+                  .trim()
+                  .replaceAll(" ", "-")}`}
+                key={index}
+              >
+                <div className="font-serif text-lg my-1 hover:bg-nf_blue">
+                  {product.name}
+                </div>
+              </Link>
+            ))}
+          </div>
         )}
-        </div>
+      </div>
     </div>
   );
 }

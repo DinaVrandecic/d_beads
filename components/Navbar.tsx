@@ -20,10 +20,10 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
 
   return (
     <div className=" justify-between sticky z-10 top-0 hidden md:flex lg:flexg:w-1/2l bg-nf_blue mb-15">
-      <div className="mx-[10px] lg:mx-[30px] mt-[30px]">
+      <div className="mx-[10px] lg:mx-[30px] flex justify-center items-center">
         <Link legacyBehavior href="/">
           <a>
-            <Image src={logoImage} alt="Hero Image" width={150} height={150} />
+            <Image src={logoImage} alt="Hero Image" width={80} height={80} />
           </a>
         </Link>
       </div>
