@@ -1,6 +1,8 @@
+"use client";
+import PictureSlider from "@/components/PictureSlider";
 import Image from "next/image";
-import eid from "../../public/pictures/eid.png";
-import vision from "../../public/pictures/vision.png";
+import me from "../../public/pictures/other_pictures/me.jpg";
+import jewelry from "../../public/pictures/other_pictures/jewelry.jpg";
 
 export default function About() {
   return (
@@ -10,19 +12,20 @@ export default function About() {
       </h1>
 
       <section className="flex flex-col md:flex-row  items-center justify-around mb-8 my-[50px] ">
-        <div className=" mb-4 mt-8 md:mb-0 relative order-2 md:order-1 mr-[30px] md:mr-[0px]">
+        <div className="  mb-4 mt-8 md:mb-0 mr-[30px] md:mr-[0px] relative order-2 md:order-1">
           <Image
-            src={eid}
-            alt="Dina"
-            width={510}
-            height={400}
-            className="object-cover"
+            src={me}
+            alt="me"
+            width={500}
+            height={500}
+            className="object-cover "
           />
+
           <div className="absolute w-full h-full -top-[30px] left-[30px] -z-10 bg-peach1"></div>
         </div>
         <div className="md:w-1/2 ml-[0px] md:ml-[100px] text-center md:text-left order-1 md:order-2">
           <h2 className="text-2xl md:text-3xl font-bold font-serif text-blue1 mb-4">
-            Meet me
+            Behind the Beads
           </h2>
           <p className="mb-4 font-serif text-brown1">
             Hello, I'm Dina, and I call the beautiful city of Split in Croatia
@@ -47,7 +50,7 @@ export default function About() {
       <section className="flex flex-col md:flex-row items-center justify-around mb-8 mt-[50px]">
         <div className="md:w-1/2 text-center md:text-left">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue1 font-serif">
-            My jewelry
+            My Jwelry
           </h2>
           <p className="mb-4 font-serif text-brown1">
             Step into the world of jewelry creations, where style meets
@@ -57,22 +60,38 @@ export default function About() {
             add a vibrant touch to any outfit. Keep an eye out for upcoming hair
             wraps, soon to be accessible on the page.
           </p>
-
-          <p className="mb-4 font-serif text-brown1">
-            I also host jewelry workshops suitable for all ages, as beading
-            knows no age limit. Consider renting this workshop for birthdays or
-            similar occasions, where creativity takes center stage!
-          </p>
         </div>
         <div className="mb-4 mt-8 md:mb-0 md:ml-28 relative mr-[30px] md:mr-[0px]">
           <Image
-            src={vision}
-            alt="Our Vision"
-            width={510}
-            height={400}
+            src={jewelry}
+            alt="jewelry"
+            width={500}
+            height={500}
             className="object-cover "
           />
           <div className="absolute w-full h-full -top-[30px] left-[30px] -z-10 bg-peach1"></div>
+        </div>
+      </section>
+      <section className="flex flex-col md:flex-row  items-center justify-around mb-8 my-[50px] ">
+        <div className=" mb-4 mt-8 md:mb-0 relative order-2 md:order-1 mr-[30px] md:mr-[0px]">
+          <PictureSlider />
+          <div className="absolute w-full h-full -top-[30px] left-[30px] -z-10 bg-peach1"></div>
+        </div>
+        <div className="md:w-1/2 ml-[0px] md:ml-[100px] text-center md:text-left order-1 md:order-2">
+          <h2 className="text-2xl md:text-3xl font-bold font-serif text-blue1 mb-4">
+            Workshops
+          </h2>
+          <p className="mb-4 font-serif text-brown1">
+            In addition to creating jewelry, I also host jewelry workshops on
+            the beautiful island of Brač, where creativity knows no age limit.
+          </p>
+          <p className="mb-4 font-serif text-brown1">
+            These workshops are a fun and engaging experience for kids, making
+            them an ideal choice for birthdays or similar celebrations. Whether
+            it's a birthday party or a special event, you can rent these
+            workshops to ensure a creative and memorable experience where
+            everyone can enjoy the art of beading.
+          </p>
         </div>
       </section>
     </div>
