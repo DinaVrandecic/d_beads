@@ -9,7 +9,6 @@ import Search from "../components/Search";
 import Dropdown from "./DropdownButton";
 
 interface NavbarProps {
-  // Record of string keys and string values where each value is a path starting with a slash
   pages: Record<string, `/${string}`>;
 }
 const baseClass =
@@ -23,7 +22,13 @@ const Navbar: FC<NavbarProps> = ({ pages }) => {
       <div className="mx-[10px] lg:mx-[30px] flex justify-center items-center">
         <Link legacyBehavior href="/">
           <a>
-            <Image src={logoImage} alt="Hero Image" width={80} height={80} />
+            <Image
+              src={logoImage}
+              alt="Hero Image"
+              width={120}
+              height={120}
+              className="h-auto"
+            />
           </a>
         </Link>
       </div>

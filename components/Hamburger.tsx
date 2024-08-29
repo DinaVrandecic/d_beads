@@ -23,7 +23,7 @@ const Hamburger: FC<HamburgerProps> = ({ pages }) => {
 
   return (
     <div className="hover:cursor-pointer md:hidden lg:hidden sticky z-10 top-0">
-      <div className="flex py-[10px] bg-nf_blue">
+      <div className="flex items-center py-[10px] bg-nf_blue">
         <div
           onClick={toggleMenu}
           className="p-5 w-10 h-10 bg-nf_blue flex flex-col justify-around"
@@ -49,13 +49,13 @@ const Hamburger: FC<HamburgerProps> = ({ pages }) => {
             ></span>
           </div>
         </div>
-        <div className="m-[10px] flex justify-center items-center">
+        <div className="ml-[10px] mt-[12px] flex justify-center items-center">
           <Image src={logoImage} alt="Hero Image" width={100} height={100} />
         </div>
       </div>
 
       <div
-        className={`fixed w-full top-[50px] left-0 bg-nf_blue text-dark_blue h-[calc(100vh-50px)] z-10 transform transition-transform duration-700 delay-150 ${
+        className={`fixed w-full left-0 bg-nf_blue text-dark_blue h-[calc(100vh-50px)] z-10 transform transition-transform duration-700 delay-150 ${
           isMenuOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
