@@ -1,23 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Product from "../../../../components/Product";
-import { fetchGraphQL } from "@/lib/contentfulFetch";
-import { useContext } from "@/app/context/context";
-
-const space_id = "w4hubm46n8vc";
-const access_token = "N45HXFp-MbSa4GvLTotphSM4O3Ey5jCx9Qvb8-9p5PE";
+import { collection, query, where, getDocs } from "firebase/firestore";
+import { db } from "@/app/firebase/firebase"; // Adjust the path to your Firebase setup
 
 interface Product {
   category: string;
-  name: string;
+  title: string;
   price: string;
-  picture: {
-    id: number;
-    title: string;
-    description: string;
-    contentType: string;
-    url: string;
-  };
+  image: string;
 }
 
 interface pageProps {
@@ -29,55 +20,49 @@ interface pageProps {
 
 function Page({ params }: pageProps) {
   const [redirectToNotFound, setRedirectToNotFound] = useState<boolean>(false);
-  const [product, setProduct] = useState<Product>({} as Product);
-  const productName = params.product.replace(/-/g, " ");
+  const [product, setProduct] = useState<Product | null>(null);
+  const productName = params.product.replace(/-/g, " ").toLowerCase(); // Handle spaces and lowercase
 
   useEffect(() => {
-    const query = `
-    query {
-      productCollection (where: {name: "${productName}"}) {
-        items {
-          name
-          price
-          category
-          picture {
-            title
-            description
-            contentType
-            url
-          }
-        }
-      }
-    }
-  `;
-
-    const fetchData = async () => {
+    const fetchProduct = async () => {
       try {
-        const response = await fetchGraphQL(query, space_id, access_token);
-        const data = await response.json();
-        console.log(data.data.productCollection.items[0]);
-        setProduct(data.data.productCollection.items[0]);
+        const productsRef = collection(db, "products");
+        // Query to find the specific product by name (case-insensitive search)
+        const q = query(
+          productsRef,
+          where("title", "==", productName) // Ensure product names are stored in lowercase
+        );
+
+        const querySnapshot = await getDocs(q);
+
+        if (!querySnapshot.empty) {
+          const productData = querySnapshot.docs[0].data() as Product;
+          setProduct(productData);
+        } else {
+          // Redirect if the product is not found
+          setRedirectToNotFound(true);
+        }
       } catch (error) {
-        console.error("Error fetching Contentful data:", error);
+        console.error("Error fetching Firestore data:", error);
       }
     };
 
-    fetchData();
-  }, [params.category]);
+    fetchProduct();
+  }, [productName]);
 
   if (redirectToNotFound) {
+    // Redirect to a not-found page if the product is not found
     window.location.href = "/not-found";
     return null;
   }
-  console.log(product);
 
   return (
     <div className="flex justify-center items-center flex-col">
-      {product.picture && product.picture.url && (
+      {product && (
         <Product
-          imageUrl={product.picture.url}
+          image={product.image}
           category={product.category}
-          title={product.name}
+          title={product.title}
           price={product.price}
         />
       )}

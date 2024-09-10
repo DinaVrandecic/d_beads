@@ -13,10 +13,11 @@ const Dropdown: React.FC<DropdownProps> = ({ link }) => {
 
   const items: Record<string, `/${string}`> = {
     all: "/all",
-    earring: "/earrings",
     ring: "/rings",
     bracelet: "/bracelets",
     necklace: "/necklaces",
+    charm: "/charms",
+    chain: "/chains",
   };
 
   const baseClass =

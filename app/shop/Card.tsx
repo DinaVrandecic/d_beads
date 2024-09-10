@@ -3,21 +3,25 @@ import Image from "next/image";
 import Link from "next/link";
 
 interface CardProps {
-  imageUrl: string;
+  image: string;
   category: string;
   title: string;
   price: string;
   onAddToCart: () => void;
 }
 
+const capitalizeFirstLetter = (str: string) => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+};
+
 const Card: React.FC<CardProps> = ({
-  imageUrl,
+  image,
   category,
   title,
   price,
   onAddToCart,
 }) => {
-  const urlNew = title.trim().replaceAll(" ", "-");
+  const urlNew = title ? title.trim().replaceAll(" ", "-") : "";
 
   return (
     <Link
@@ -26,7 +30,7 @@ const Card: React.FC<CardProps> = ({
     >
       <div className="m-[20px]">
         <Image
-          src={imageUrl}
+          src={image}
           alt={title}
           width={300}
           height={300}
@@ -34,11 +38,12 @@ const Card: React.FC<CardProps> = ({
         />
       </div>
       <p className="font-serif text-xl font-bold whitespace-break-spaces text-blue1">
-        {title}
+        {capitalizeFirstLetter(title)}
       </p>
-      <p className="font-serif text-xl font-bold whitespace-break-spaces text-brown1">
+      <div className="flex font-serif text-xl font-bold whitespace-break-spaces text-brown1">
         {price}
-      </p>
+        <span className="mt-[3px]">€</span>
+      </div>
     </Link>
   );
 };

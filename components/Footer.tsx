@@ -31,7 +31,7 @@ export default function Footer() {
             <a className="block mb-2 hover:text-peach1">Shop</a>
           </Link>
           <Link legacyBehavior href="/about">
-            <a className="block mb-2 hover:text-peach1">About Us</a>
+            <a className="block mb-2 hover:text-peach1">About</a>
           </Link>
           <Link legacyBehavior href="/cart">
             <a className="block mb-2 hover:text-peach1">Shopping cart</a>

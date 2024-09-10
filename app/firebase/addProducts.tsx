@@ -2,8 +2,7 @@
 import { useEffect } from "react";
 import { collection, doc, setDoc } from "firebase/firestore";
 import products from "../../public/products.json";
-import { db } from "./firebase"; // Ensure you have this import from your firebase setup
-
+import { db } from "./firebase";
 const AddProducts: React.FC = () => {
   useEffect(() => {
     async function addProducts() {
@@ -11,11 +10,11 @@ const AddProducts: React.FC = () => {
 
       try {
         for (const product of products) {
-          const { docId, ...productData } = product; // Extract docId and the rest of the product data
+          const { docId, ...productData } = product;
 
           if (docId) {
-            const productDocRef = doc(productsRef, docId); // Use custom docId for the document reference
-            await setDoc(productDocRef, productData); // Use setDoc instead of addDoc to set data with a custom ID
+            const productDocRef = doc(productsRef, docId);
+            await setDoc(productDocRef, productData);
           } else {
             console.error("Document ID is missing for product:", product);
           }
@@ -29,7 +28,7 @@ const AddProducts: React.FC = () => {
     addProducts();
   }, []);
 
-  return null; // This component doesn't render anything
+  return null;
 };
 
 export default AddProducts;

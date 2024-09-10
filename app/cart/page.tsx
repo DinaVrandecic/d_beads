@@ -6,6 +6,11 @@ import { useContext } from "../context/context";
 
 function ShoppingCartPage() {
   const { cartArray, removeItemFromCart } = useContext();
+
+  const capitalizeFirstLetter = (str: string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   return (
     <div className="flex flex-col justify-center">
       {cartArray.length === 0 && (
@@ -51,12 +56,14 @@ function ShoppingCartPage() {
                 ></img>
                 <div className="flex-1 ml-auto flex justify-end items-center gap-2 md:mr-5">
                   <div className="text-blue1 font-bold font-serif text-base md:text-xl ">
-                    {cartItem.name}
+                    {capitalizeFirstLetter(cartItem.name)}
                   </div>
-                  <div className="text-brown1 font-bold font-serif text-base md:text-xl m-[10px]">
+                  <div className="flex text-brown1 font-bold font-serif text-base md:text-xl m-[10px]">
                     {cartItem.price}
+                    <span className="mt-[3px]">€</span>
                   </div>
-                  <div className="text-brown1 font-bold font-serif text-base md:text-xl m-[10px]">
+                  <div className=" text-nf_blue font-bold font-serif text-base md:text-xl m-[10px]">
+                    <span className="font-mono font-normal">x</span>
                     {cartItem.quantity}
                   </div>
                 </div>

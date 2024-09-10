@@ -5,18 +5,13 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 interface ProductProps {
-  imageUrl: string;
+  image: string;
   category: string;
   title: string;
   price: string;
 }
 
-const Product: React.FC<ProductProps> = ({
-  imageUrl,
-  category,
-  title,
-  price,
-}) => {
+const Product: React.FC<ProductProps> = ({ image, category, title, price }) => {
   const urlNew = title.trim().replaceAll(" ", "-");
   const [counter, setCounter] = useState(1);
   const { cartArray, addToCart } = useContext();
@@ -26,7 +21,7 @@ const Product: React.FC<ProductProps> = ({
       name: title,
       price,
       quantity: counter,
-      picture: imageUrl,
+      picture: image,
     });
     toast.success(`${counter} ${title} added to cart!`, {
       position: "top-center",
@@ -40,12 +35,16 @@ const Product: React.FC<ProductProps> = ({
     });
   };
 
+  const capitalizeFirstLetter = (str: string) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
   return (
     <div className="flex flex-col md:flex-row justify-center items-center w-fit h-fit mx-[15px] mt-[50px]">
       <div className="flex">
         <div className="relative mt-[30px] mr-[30px]">
           <Image
-            src={imageUrl}
+            src={image}
             alt={title}
             width={400}
             height={400}
@@ -56,10 +55,10 @@ const Product: React.FC<ProductProps> = ({
       </div>
       <div className="flex flex-col items-center mt-[30px] md:mt-[0px] md:ml-[100px]">
         <div className="text-2xl md:text-3xl font-bold text-center text-dark_blue font-serif ">
-          {title}
+          {capitalizeFirstLetter(title)}
         </div>
-        <p className="font-serif text-xl font-bold whitespace-break-spaces text-brown1 mt-[10px]">
-          {price}
+        <p className="flex font-serif text-xl font-bold whitespace-break-spaces text-brown1 mt-[10px]">
+          {price} <span className="mt-[3px]">€</span>
         </p>
         <div className="flex justify-between mt-5 outline outline-1 outline-gray py-1">
           <button

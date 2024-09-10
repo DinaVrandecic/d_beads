@@ -1,27 +1,27 @@
 [
   {
     "docId": "pearl-butterfly-necklace",
-    "name": "Pearl butterfly necklace",
+    "title": "pearl butterfly necklace",
     "description": "Elegant 24k gold necklace with intricate design.",
     "price": 4,
-    "images": ["./pictures/db_pictures/pearl_butterfly.jpg"],
-    "category": "Necklace",
+    "image": "/pictures/db_pictures/pearl_butterfly.jpg",
+    "category": "necklace",
     "availableColors": ["Purple", "Blue", "Orange", "Yellow"]
   },
   {
     "docId": "heart-bracelet",
-    "name": "Heart bracelet",
+    "title": "heart bracelet",
     "description": "Sterling silver bracelet with a modern, minimalist design.",
     "price": 3,
-    "images": ["./pictures/db_pictures/heart_bracelet.jpg"],
-    "category": "Bracelet"
+    "image": "/pictures/db_pictures/heart_bracelet.jpg",
+    "category": "bracelet"
   },
   {
     "docId": "blue-phone-charm",
-    "name": "Blue phone charm",
+    "title": "blue phone charm",
     "description": "Beautiful diamond stud earrings, perfect for any occasion.",
-    "price": 499.99,
-    "images": ["./pictures/db_pictures/blue_charm.jpg"],
-    "category": "Charm"
+    "price": 5,
+    "image": "/pictures/db_pictures/blue_charm.jpg",
+    "category": "charm"
   }
 ]
