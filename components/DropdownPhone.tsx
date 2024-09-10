@@ -14,7 +14,8 @@ const Dropdown: React.FC<DropdownProps> = ({ link, toggleMenu }) => {
 
   const items: Record<string, `/${string}`> = {
     all: "/all",
-    earring: "/earrings",
+    charm: "/charms",
+    chain: "/chains",
     ring: "/rings",
     bracelet: "/bracelets",
     necklace: "/necklaces",

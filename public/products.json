@@ -23,5 +23,261 @@
     "price": 5,
     "image": "/pictures/db_pictures/blue_charm.jpg",
     "category": "charm"
+  },
+  {
+    "docId": "pink-bracelet-set",
+    "title": "pink bracelet set",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/pink_bracelet_set.jpg",
+    "category": "bracelet"
+  },
+  {
+    "docId": "red-pearl-necklace",
+    "title": "red pearl necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 5,
+    "image": "/pictures/db_pictures/red_pearl_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "scattered-pearl-necklace",
+    "title": "scattered pearl necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 4,
+    "image": "/pictures/db_pictures/scattered_pearl_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "elegant-necklace",
+    "title": "elegant necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 5,
+    "image": "/pictures/db_pictures/elegant_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "flower-necklace",
+    "title": "flower necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 5,
+    "image": "/pictures/db_pictures/flower_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "black-flower-bracelet",
+    "title": "black flower bracelet",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 3,
+    "image": "/pictures/db_pictures/black_flower_bracelet.jpg",
+    "category": "bracelet"
+  },
+  {
+    "docId": "name-flower-bracelet",
+    "title": "name flower bracelet",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 3,
+    "image": "/pictures/db_pictures/name_flower_bracelet.jpg",
+    "category": "bracelet"
+  },
+  {
+    "docId": "wood_and_stone_bracelets",
+    "title": "wood and stone bracelets",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/wood_and_stone_bracelets.jpg",
+    "category": "bracelet"
+  },
+  {
+    "docId": "pink_heart_charm",
+    "title": "pink heart charm",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 4,
+    "image": "/pictures/db_pictures/pink_heart_charm.jpg",
+    "category": "charm"
+  },
+  {
+    "docId": "light_pink_charm",
+    "title": "light pink charm",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 3,
+    "image": "/pictures/db_pictures/light_pink_charm.jpg",
+    "category": "charm"
+  },
+  {
+    "docId": "colorful_sunglasses_chain",
+    "title": "colorful sunglasses chain",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 8,
+    "image": "/pictures/db_pictures/colorful_sunglasses_chain.jpg",
+    "category": "chain"
+  },
+  {
+    "docId": "multicolored_body_chain",
+    "title": "multicolored body chain",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 10,
+    "image": "/pictures/db_pictures/multicolored_body_chain.jpg",
+    "category": "chain"
+  },
+  {
+    "docId": "two_flower_rings",
+    "title": "two flower rings",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 5,
+    "image": "/pictures/db_pictures/two_flower_rings.jpg",
+    "category": "ring"
+  },
+  {
+    "docId": "bold_ring_set",
+    "title": "bold ring set",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 5,
+    "image": "/pictures/db_pictures/bold_ring_set.jpg",
+    "category": "ring"
+  },
+  {
+    "docId": "pastel_charm",
+    "title": "pastel charm",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/pastel_charm.jpg",
+    "category": "charm"
+  },
+  {
+    "docId": "vibrant_butterfly_necklace",
+    "title": "vibrant butterfly necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 7,
+    "image": "/pictures/db_pictures/vibrant_butterfly_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "earthy_set",
+    "title": "earthy set",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/green_and_gold_set.jpg",
+    "category": "earthy_set"
+  },
+  {
+    "docId": "three_piece_set",
+    "title": "three piece set",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/three_piece_set.jpg",
+    "category": "bracelet"
+  },
+  {
+    "docId": "chic_ring_set",
+    "title": "chic ring set",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 5,
+    "image": "/pictures/db_pictures/chic_ring_set.jpg",
+    "category": "ring"
+  },
+  {
+    "docId": "green_and_gold_set",
+    "title": "green and gold set",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/green_and_gold_set.jpg",
+    "category": "bracelet"
+  },
+  {
+    "docId": "sleek_bracelet_set",
+    "title": "sleek bracelet set",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/sleek_bracelet_set.jpg",
+    "category": "bracelet"
+  },
+  {
+    "docId": "watermelon_necklace",
+    "title": "watermelon necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/watermelon_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "timeless_necklace",
+    "title": "timeless necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 7,
+    "image": "/pictures/db_pictures/timeless_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "watermelon_necklace",
+    "title": "watermelon necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/watermelon_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "artistic_charm",
+    "title": "artistic charm",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/artistic_charm.jpg",
+    "category": "charm"
+  },
+  {
+    "docId": "friendship_necklace",
+    "title": "friendship necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 5,
+    "image": "/pictures/db_pictures/friendship_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "trendy_necklace",
+    "title": "trendy necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/trendy_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "electric_charm",
+    "title": "electric charm",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 4,
+    "image": "/pictures/db_pictures/electric_charm.jpg",
+    "category": "charm"
+  },
+  {
+    "docId": "classic_pearl_necklace",
+    "title": "classic pearl necklace",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/classic_pearl_necklace.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "double_string_bracelet",
+    "title": "double string bracelet",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 5,
+    "image": "/pictures/db_pictures/double_string_bracelet.jpg",
+    "category": "bracelet"
+  },
+  {
+    "docId": "green_necklace_set",
+    "title": "green_necklace_set",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 6,
+    "image": "/pictures/db_pictures/green_necklace_set.jpg",
+    "category": "necklace"
+  },
+  {
+    "docId": "stunning_charms",
+    "title": "stunning charms",
+    "description": "Sterling silver bracelet with a modern, minimalist design.",
+    "price": 5,
+    "image": "/pictures/db_pictures/stunning_charms.jpg",
+    "category": "charm"
   }
 ]

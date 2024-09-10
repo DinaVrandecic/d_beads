@@ -34,7 +34,9 @@ function Page({ params }: pageProps) {
         if (normalizedCategory === "all") {
           q = query(productsRef); // Fetch all products
         } else if (
-          ["charm", "bracelet", "necklace"].includes(normalizedCategory)
+          ["charm", "bracelet", "necklace", "ring", "chain"].includes(
+            normalizedCategory
+          )
         ) {
           q = query(productsRef, where("category", "==", normalizedCategory)); // Fetch products by category
         } else {
