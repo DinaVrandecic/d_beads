@@ -40,9 +40,9 @@ const Card: React.FC<CardProps> = ({
       <p className="font-serif text-xl font-bold whitespace-break-spaces text-blue1">
         {capitalizeFirstLetter(title)}
       </p>
-      <div className="flex font-serif text-xl font-bold whitespace-break-spaces text-brown1">
+      <div className="font-inter text-xl font-semibold whitespace-break-spaces text-brown1">
         {price}
-        <span className="mt-[3px]">€</span>
+        <span>€</span>
       </div>
     </Link>
   );

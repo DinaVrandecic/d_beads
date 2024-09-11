@@ -48,28 +48,31 @@ function ShoppingCartPage() {
             return (
               <div
                 key={index}
-                className="flex bg-white gap-2 mt-[20px] justify-center items-center w-11/12 lg:w-2/4"
+                className="flex bg-white gap-2 mt-[20px] justify-center items-center w-11/12 md:w-2/3 xl:w-1/2"
               >
                 <img
-                  className="w-[150px] h-[150px] md:w-[200px] md:h-[200px] p-[10px]"
+                  className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] m-[8px] ring-8 ring-peach1 "
                   src={cartItem.picture}
                 ></img>
-                <div className="flex-1 ml-auto flex justify-end items-center gap-2 md:mr-5">
-                  <div className="text-blue1 font-bold font-serif text-base md:text-xl ">
+                <div className="flex-1 flex flex-col md:flex-row ml-auto justify-end items-center gap-2 md:mr-5">
+                  <div className="text-blue1 font-bold font-serif text-base md:text-xl text-center md:w-full">
                     {capitalizeFirstLetter(cartItem.name)}
                   </div>
-                  <div className="flex text-brown1 font-bold font-serif text-base md:text-xl m-[10px]">
-                    {cartItem.price}
-                    <span className="mt-[3px]">€</span>
-                  </div>
-                  <div className=" text-nf_blue font-bold font-serif text-base md:text-xl m-[10px]">
-                    <span className="font-mono font-normal">x</span>
-                    {cartItem.quantity}
+                  <div className="md:flex md:w-full md:justify-center">
+                    <div className="text-brown1 font-inter font-semibold text-base md:text-xl m-[10px]">
+                      {cartItem.price}
+                      <span>€</span>
+                    </div>
+                    <div className="text-nf_blue font-inter font-semibold text-base md:text-xl m-[10px]">
+                      <span className="font-normal">x</span>
+                      {cartItem.quantity}
+                    </div>
                   </div>
                 </div>
+
                 <div
                   onClick={() => removeItemFromCart(cartItem)}
-                  className=" text-brown1 font-bold py-[5px] px-[10px] bg-beige_text m-[10px] hover:cursor-pointer rounded-sm"
+                  className="text-brown1 font-bold py-[5px] px-[10px] bg-beige_text m-[10px] hover:cursor-pointer rounded-sm"
                 >
                   X
                 </div>
