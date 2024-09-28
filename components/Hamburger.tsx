@@ -49,9 +49,12 @@ const Hamburger: FC<HamburgerProps> = ({ pages }) => {
             ></span>
           </div>
         </div>
-        <div className="ml-[10px] mt-[12px] flex justify-center items-center">
+        <Link
+          className="ml-[10px] mt-[12px] flex justify-center items-center"
+          href={"/"}
+        >
           <Image src={logoImage} alt="Hero Image" width={100} height={100} />
-        </div>
+        </Link>
       </div>
 
       <div

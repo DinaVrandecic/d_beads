@@ -8,6 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        "top-right": "8px -8px 12px rgba(105, 90, 90, 0.3)",
+        "top-right-bottom":
+          "8px -8px 12px rgba(105, 90, 90, 0.3), 0px 8px 15px rgba(105, 90, 90, 0.3)",
+      },
+
       fontFamily: {
         roboto: ["var(--font-roboto)"],
         "roboto-condensed": ["var(--font-roboto-condensed)"],
@@ -34,9 +40,9 @@ const config: Config = {
         beige1: "#BFA890",
         faded_beige: "#C5BAAF",
         beige_text: "#EAE0DA",
-        nf_blue:"#84ACCD",
-        light_blue:"#A3D6FF",
-        page_background:"#F7F5EB",
+        nf_blue: "#84ACCD",
+        light_blue: "#A3D6FF",
+        page_background: "#F7F5EB",
         "brand-orange": {
           50: "#FFF5E6",
           600: "#E88C00",
@@ -48,5 +54,3 @@ const config: Config = {
   plugins: [],
 };
 export default config;
-
-

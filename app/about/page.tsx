@@ -18,7 +18,7 @@ export default function About() {
             alt="me"
             width={500}
             height={500}
-            className="object-cover "
+            className="object-cover shadow-top-right "
           />
 
           <div className="absolute w-full h-full -top-[30px] left-[30px] -z-10 bg-peach1"></div>
@@ -67,7 +67,7 @@ export default function About() {
             alt="jewelry"
             width={500}
             height={500}
-            className="object-cover "
+            className="object-cover shadow-top-right"
           />
           <div className="absolute w-full h-full -top-[30px] left-[30px] -z-10 bg-peach1"></div>
         </div>

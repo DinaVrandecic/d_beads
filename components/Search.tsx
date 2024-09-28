@@ -71,7 +71,7 @@ function Search() {
           onChange={handleInputChange}
           type="text"
           placeholder="Search..."
-          className="block w-[80px] lg:w-full p-[3px] lg:px-4 py-2 text-brown1 bg-page_background focus:ring-peach1 focus:outline-none focus:ring focus:ring-opacity-70 font-serif text-xl"
+          className="block w-[80px] lg:w-full p-[3px] lg:px-4 py-2  rounded-sm text-brown1 bg-page_background focus:ring-peach1 focus:outline-none focus:ring focus:ring-opacity-70 font-serif text-xl"
         />
         {isDropdownVisible && searchResults.length > 0 && (
           <div

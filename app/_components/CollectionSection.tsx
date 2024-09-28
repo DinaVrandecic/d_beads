@@ -8,7 +8,7 @@ import Link from "next/link";
 const CollectionSection = () => (
   <div className="w-full">
     <div className="flex flex-col items-center lg:flex-row justify-center gap-[50px] md:gap-[100px] mt-20 mb-2 mr-[30px] p-[15px] font-serif rounded-sm">
-      <Collection heroImage={phone_charm} button_text="phone charm" />
+      <Collection heroImage={phone_charm} button_text="charm" />
       <Collection heroImage={bracelet} button_text="bracelet" />
       <Collection heroImage={necklace} button_text="necklace" />
     </div>

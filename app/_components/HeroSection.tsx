@@ -31,7 +31,7 @@ export default function HeroSection() {
             alt="Hero GIF"
             height={500}
             width={500}
-            className="w-[750px] h-auto"
+            className="w-[750px] h-auto shadow-top-right-bottom"
           />
           <div className="absolute w-full h-[120%] -top-[10%] left-[50px] md:left-[70px] -z-10 bg-peach1"></div>
         </div>

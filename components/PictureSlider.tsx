@@ -28,19 +28,19 @@ export default function PictureSlider() {
 
   return (
     <div className="relative w-full max-w-[480px] md:max-w-[500px] mx-auto">
-      <div className="overflow-hidden relative">
+      <div className="overflow-hidden relative shadow-top-right">
         <div
-          className="flex transition-transform ease-out duration-500"
+          className="flex transition-transform ease-out duration-500 "
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {images.map((image, index) => (
-            <div key={index} className="w-full flex-shrink-0">
+            <div key={index} className="w-full flex-shrink-0 ">
               <Image
                 src={image}
                 alt={`Slide ${index + 1}`}
                 width={400}
                 height={400}
-                className="object-cover w-full h-auto"
+                className="object-cover w-full h-auto "
               />
             </div>
           ))}

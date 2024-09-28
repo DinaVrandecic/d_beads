@@ -29,7 +29,6 @@ const Dropdown: React.FC<DropdownProps> = ({ link }) => {
         className={cn(baseClass, {
           "bg-dark_blue text-peach1": link === pathName,
         })}
-        onClick={() => setShowDropdown(!showDropdown)}
         onMouseEnter={() => setShowDropdown(true)}
         onMouseLeave={() => setShowDropdown(false)}
       >

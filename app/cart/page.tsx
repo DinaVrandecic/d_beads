@@ -18,7 +18,7 @@ function ShoppingCartPage() {
           <h1 className="text-center mt-[30px] text-4xl md:text-5xl font-bold font-serif text-dark_blue">
             My Cart
           </h1>
-          <div className="mb-[40px] mt-[60px] relative mr-[30px]">
+          <div className="mb-[40px] mt-[60px] relative mr-[30px] shadow-top-right">
             <Image
               src={cart}
               alt="Our Vision"
