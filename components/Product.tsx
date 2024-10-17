@@ -42,7 +42,7 @@ const Product: React.FC<ProductProps> = ({ image, category, title, price }) => {
   return (
     <div className="flex flex-col md:flex-row justify-center items-center w-fit h-fit mx-[15px] mt-[50px]">
       <div className="flex">
-        <div className="relative mt-[30px] mr-[30px]">
+        <div className="relative mt-[30px] mr-[30px] shadow-top-right">
           <Image
             src={image}
             alt={title}
@@ -77,7 +77,7 @@ const Product: React.FC<ProductProps> = ({ image, category, title, price }) => {
         </div>
         <div>
           <button
-            className="font-serif text-dark_blue bg-peach1 hover:text-peach1 hover:bg-dark_blue p-[7px] mt-[10px] rounded-sm"
+            className="bg-dark_blue font-serif hover:bg-peach1 text-peach1 hover:text-dark_blue py-2 px-4 mt-3 mb-3 text-serif rounded-sm shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out"
             onClick={handleAddToCart}
           >
             Add to cart

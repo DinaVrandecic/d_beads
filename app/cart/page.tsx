@@ -1,8 +1,11 @@
 "use client";
+import { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import cart from "../../public/pictures/cart.png";
 import { useContext } from "../context/context";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function ShoppingCartPage() {
   const { cartArray, removeItemFromCart } = useContext();
@@ -10,9 +13,14 @@ function ShoppingCartPage() {
   const capitalizeFirstLetter = (str: string) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
   };
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+    });
+  }, []);
 
   return (
-    <div className="flex flex-col justify-center">
+    <div className="flex flex-col justify-center" data-aos="zoom-out-up">
       {cartArray.length === 0 && (
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-center mt-[30px] text-4xl md:text-5xl font-bold font-serif text-dark_blue">
@@ -35,7 +43,7 @@ function ShoppingCartPage() {
             Add something!
           </h4>
           <Link legacyBehavior href="/shop/all">
-            <a className="bg-dark_blue font-serif hover:bg-peach1 text-peach1 hover:text-dark_blue py-2 px-4 mt-3 mb-3 text-serif">
+            <a className="bg-dark_blue font-serif hover:bg-peach1 text-peach1 hover:text-dark_blue py-2 px-4 mt-3 mb-3 text-serif rounded-sm shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 ease-in-out">
               SHOP ALL
             </a>
           </Link>
@@ -48,12 +56,15 @@ function ShoppingCartPage() {
             return (
               <div
                 key={index}
-                className="flex bg-white gap-2 mt-[20px] justify-center items-center w-11/12 md:w-2/3 xl:w-1/2"
+                className="flex bg-white gap-2 mt-[20px] justify-center items-center w-11/12 md:w-2/3 xl:w-1/2 shadow-md rounded-sm"
+                data-aos="zoom-out-up"
               >
-                <img
-                  className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] m-[8px] ring-8 ring-peach1 "
-                  src={cartItem.picture}
-                ></img>
+                <div className="m-[8px] rounded-md shadow-inner shadow-brown1">
+                  <img
+                    className="w-[100px] h-[100px] md:w-[150px] md:h-[150px] m-[8px] ring-8 ring-peach1 rounded-sm shadow-md shadow-black "
+                    src={cartItem.picture}
+                  ></img>
+                </div>
                 <div className="flex-1 flex flex-col md:flex-row ml-auto justify-end items-center gap-2 md:mr-5">
                   <div className="text-blue1 font-bold font-serif text-base md:text-xl text-center md:w-full">
                     {capitalizeFirstLetter(cartItem.name)}
@@ -72,7 +83,7 @@ function ShoppingCartPage() {
 
                 <div
                   onClick={() => removeItemFromCart(cartItem)}
-                  className="text-brown1 font-bold py-[5px] px-[10px] bg-beige_text m-[10px] hover:cursor-pointer rounded-sm"
+                  className="text-brown1 font-bold py-[5px] px-[10px] bg-beige_text m-[10px] hover:cursor-pointer rounded-sm shadow-sm shadow-brown1"
                 >
                   X
                 </div>
@@ -83,8 +94,7 @@ function ShoppingCartPage() {
       )}
 
       <div className="flex flex-col align-center mt-[50px] mx-auto max-w-3xl">
-        {/* Payment Method Section */}
-        <div className="px-[10px]">
+        <div className="px-[10px]" data-aos="zoom-out-up">
           <h2 className="text-2xl font-bold font-serif text-dark_blue mb-3">
             Payment Methods
           </h2>
@@ -104,8 +114,7 @@ function ShoppingCartPage() {
           </p>
         </div>
 
-        {/* Delivery Information Section */}
-        <div className="mt-[50px] px-[10px]">
+        <div className="mt-[50px] px-[10px]" data-aos="zoom-out-up">
           <h2 className="text-2xl font-bold font-serif text-dark_blue mb-3">
             Delivery Information
           </h2>

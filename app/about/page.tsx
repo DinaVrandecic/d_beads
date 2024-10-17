@@ -1,10 +1,18 @@
 "use client";
+import { useEffect } from "react";
 import PictureSlider from "@/components/PictureSlider";
 import Image from "next/image";
 import me from "../../public/pictures/other_pictures/me.jpg";
 import jewelry from "../../public/pictures/other_pictures/jewelry.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 export default function About() {
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+    });
+  }, []);
   return (
     <div className="container mx-auto p-4 md:p-8">
       <h1 className="text-4xl md:text-5xl font-bold mb-15 text-center text-dark_blue font-serif">
@@ -12,7 +20,10 @@ export default function About() {
       </h1>
 
       <section className="flex flex-col md:flex-row  items-center justify-around mb-8 my-[50px] ">
-        <div className="  mb-4 mt-8 md:mb-0 mr-[30px] md:mr-[0px] relative order-2 md:order-1">
+        <div
+          className="  mb-4 mt-8 md:mb-0 mr-[30px] md:mr-[0px] relative order-2 md:order-1"
+          data-aos="flip-up"
+        >
           <Image
             src={me}
             alt="me"
@@ -23,7 +34,10 @@ export default function About() {
 
           <div className="absolute w-full h-full -top-[30px] left-[30px] -z-10 bg-peach1"></div>
         </div>
-        <div className="md:w-1/2 ml-[0px] md:ml-[100px] text-center md:text-left order-1 md:order-2">
+        <div
+          className="md:w-1/2 ml-[0px] md:ml-[100px] text-center md:text-left order-1 md:order-2"
+          data-aos="flip-up"
+        >
           <h2 className="text-2xl md:text-3xl font-bold font-serif text-blue1 mb-4">
             Behind the Beads
           </h2>
@@ -48,7 +62,7 @@ export default function About() {
       </section>
 
       <section className="flex flex-col md:flex-row items-center justify-around mb-8 mt-[50px]">
-        <div className="md:w-1/2 text-center md:text-left">
+        <div className="md:w-1/2 text-center md:text-left" data-aos="flip-up">
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-blue1 font-serif">
             My Jwelry
           </h2>
@@ -61,7 +75,10 @@ export default function About() {
             wraps, soon to be accessible on the page.
           </p>
         </div>
-        <div className="mb-4 mt-8 md:mb-0 md:ml-28 relative mr-[30px] md:mr-[0px]">
+        <div
+          className="mb-4 mt-8 md:mb-0 md:ml-28 relative mr-[30px] md:mr-[0px]"
+          data-aos="flip-up"
+        >
           <Image
             src={jewelry}
             alt="jewelry"
@@ -73,11 +90,17 @@ export default function About() {
         </div>
       </section>
       <section className="flex flex-col md:flex-row  items-center justify-around mb-8 my-[50px] ">
-        <div className=" mb-4 mt-8 md:mb-0 relative order-2 md:order-1 mr-[30px] md:mr-[0px]">
+        <div
+          className=" mb-4 mt-8 md:mb-0 relative order-2 md:order-1 mr-[30px] md:mr-[0px]"
+          data-aos="flip-up"
+        >
           <PictureSlider />
           <div className="absolute w-full h-full -top-[30px] left-[30px] -z-10 bg-peach1"></div>
         </div>
-        <div className="md:w-1/2 ml-[0px] md:ml-[100px] text-center md:text-left order-1 md:order-2">
+        <div
+          className="md:w-1/2 ml-[0px] md:ml-[100px] text-center md:text-left order-1 md:order-2"
+          data-aos="flip-up"
+        >
           <h2 className="text-2xl md:text-3xl font-bold font-serif text-blue1 mb-4">
             Workshops
           </h2>

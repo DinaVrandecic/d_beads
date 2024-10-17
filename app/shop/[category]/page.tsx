@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "../Card";
 import { collection, query, where, getDocs } from "firebase/firestore";
-import { db } from "@/app/firebase/firebase"; // Adjust the path to your Firebase setup
+import { db } from "@/app/firebase/firebase";
 
 interface Product {
   category: string;
@@ -25,20 +25,16 @@ function Page({ params }: pageProps) {
     const fetchProducts = async () => {
       try {
         const productsRef = collection(db, "products");
-
-        // Convert the category to lowercase to match Firestore data
         let normalizedCategory = params.category.toLowerCase();
-
-        // Build the query based on the category
         let q;
         if (normalizedCategory === "all") {
-          q = query(productsRef); // Fetch all products
+          q = query(productsRef);
         } else if (
           ["charm", "bracelet", "necklace", "ring", "chain"].includes(
             normalizedCategory
           )
         ) {
-          q = query(productsRef, where("category", "==", normalizedCategory)); // Fetch products by category
+          q = query(productsRef, where("category", "==", normalizedCategory));
         } else {
           setRedirectToNotFound(true);
           return;
